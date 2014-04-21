@@ -1,0 +1,218 @@
+html {
+	@media (min-width: 43.75em) {
+		font-size: 120%;
+	}
+	@media (max-width: 43.75em) {
+		font-size: 100%;
+	}
+}
+
+body {
+	color: $kore-gray;
+	font-family: "allumi-std", sans-serif;
+	font-style: normal;
+	font-weight: $font-weight-normal;
+	line-height: 1.5;	
+}
+
+// Brand text selection
+::selection {
+	background-color: $kore-orange;
+	color: white;
+}
+
+a {
+	color: $link-color;
+	text-decoration: none;
+	&:visited {
+	}
+	&:hover,
+	&:focus {
+		color: $link-hover-color;
+		transition: 0.5s ease;		
+	}
+}
+
+// Header 
+.secondary-nav {
+	font-size: 14px;
+	line-height: 48px;
+	position: absolute;
+	right: 24px;
+	top: 0;
+	z-index: 200;
+	li {
+		a {
+			color: white;
+			font-weight: 700;
+			letter-spacing: 0.02em;				
+			text-transform: uppercase;
+			white-space: nowrap;
+		}
+	}
+	@media only screen and (max-width: 37.5em) {
+		right: 12px;
+	}
+}
+
+#masthead {
+	background-color: white;
+	background-image: url(../i/bg_grid.png);
+	background-size: 7px 7px;
+	border-bottom: 1px solid $border-color;
+	padding-top: 48px;
+	img {
+		margin: 24px 0 24px 24px;
+		@media only screen and (max-width: 37.5em) {
+			margin-left: 12px;
+		}
+	}
+}
+
+
+// Navigation
+.go-to-nav {
+	display: none;
+	@media only screen and (max-width: 37.5em) {
+		position: absolute;
+		display: block;
+		z-index: 100;
+		top: 0;
+		width: 100%;
+		height: 48px;
+		background-color: $dark-blue;
+		background-image: url(http://alistapart.com/d/_repo/site_assets/img/icon_hamburger.svg);
+		background-repeat: no-repeat;
+		background-position: 12px center;
+		border-bottom: 2px solid darken($dark-blue, 10%);
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
+	}
+}
+
+.global-nav {
+	border-bottom: 3px solid darken($dark-blue, 10%);
+	position: absolute;
+	z-index: 100;
+	top: 0;
+	width: 100%;
+	background: $dark-blue;
+	font-size: 14px;
+	line-height: 18px;
+	padding: 0 24px;
+	ul {
+		margin: 0 auto;
+		line-height: 48px;
+		li {
+			display: inline-block;
+			margin-right: 20px;
+			@media only screen and (max-width: 37.5em) {
+				display: block;
+				margin-right: 0;
+				padding: 0;	
+			}
+			a {
+				color: white;
+				font-weight: 700;
+				letter-spacing: 0.02em;				
+				text-transform: uppercase;
+				white-space: nowrap;
+				@media only screen and (max-width: 37.5em) {
+					border-bottom: 1px solid darken($dark-blue, 10%);				
+					display: block;
+					padding: 0 12px;
+					&:hover,
+					&:focus {
+						background-color: darken($dark-blue, 10%);
+						color: white;
+						transition: 0.5s ease;
+					}
+				}
+			}
+		} // li
+	} // ul
+	@media only screen and (max-width: 37.5em) {
+		position: static;
+		padding: 0;
+		&.booyeah {
+			position: absolute;
+			display: none;
+			top: 48px;
+			left: 0;
+			border-top: none;			
+		}
+	}
+} //.global-nav
+
+.show-nav .global-nav.booyeah {
+	display: block;
+}
+
+.content-wrapper {
+	@include center-full;	
+}
+
+// Footer
+.global-footer {
+	.legal {
+		color: $med-gray;
+		font-size: 0.75em;
+		text-align: center;
+		li {
+			display: inline-block;
+			margin-right: 20px;
+			@media only screen and (max-width: 37.5em) {
+				display: block;
+				margin-right: 0;
+				padding: 0;
+			}
+			a {
+					
+			}
+			&:first-child {
+					
+			}
+		} // li
+		@media only screen and (max-width: 37.5em) {
+			margin-top: 1.5em;
+			border-top: none;
+		}
+	} // .legal
+}
+
+
+// Sections
+#contact,
+#mission {
+	padding: 24px 0;	
+}
+
+#contact {
+	.contact-preamble {
+	}
+	.contact-info {
+	}
+	h1 {
+		font-size: 1.3125em; //21px
+	}
+	h2 {
+		font-size: 1.125em; //18px
+	}
+}
+
+#mission {
+	background-color: $kore-orange;
+	text-align: center;
+	h1 {
+		color: tint($kore-orange, 50%);
+	}
+}
+
+#about,
+#homepage-hero,
+#presentation-slideshow,
+#video {
+//	padding-top: 48px;
+}

@@ -1,0 +1,33 @@
+// Colors
+// Grays
+
+// Primary Colors
+$kore-orange: #C74A37 !default;
+$kore-gray: #555559 !default;
+$kore-silver: #D0D2D3  !default;
+
+// Secondary Colors
+$bright-blue: #00ACD7 !default;
+$med-blue: #008FBE !default;
+
+$dark-blue: #00829A  !default;
+$med-gray: #777779 !default;
+$light-gray: #BBB9AF !default;
+
+// 50% Brand Colors
+$half-kore-orange: lighten($kore-orange, 50%) !default;
+$half-kore-gray: lighten($kore-gray, 50%) !default;
+
+$half-bright-blue: lighten($bright-blue, 50%) !default;
+$half-med-blue: lighten($med-blue, 50%) !default;
+$half-dark-blue: lighten($dark-blue, 50%) !default;
+
+//Utility Colors
+$link-color: $med-blue;
+$link-hover-color: darken($link-color, 10%) !default;
+$border-color: $half-kore-gray;
+
+// Font Weights
+$font-weight-light: 200 !default;
+$font-weight-normal: 300 !default;
+$font-weight-xbold: 700 !default;

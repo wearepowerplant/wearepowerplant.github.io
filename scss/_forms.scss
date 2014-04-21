@@ -1,0 +1,10 @@
+.login-wrapper {
+	background-color: gray;
+	padding: 10px;
+	#login {
+		text-align: left;
+		label {
+			@include hide-me;
+		}
+	}
+}

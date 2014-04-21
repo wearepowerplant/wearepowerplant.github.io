@@ -1,0 +1,90 @@
+// Breakword
+// normal: Indicates that lines may only break at normal word break points.
+// break-word : Indicates that normally unbreakable words may be broken at
+// arbitrary points if there are no otherwise acceptable break points in the line.
+%breakword {
+	word-wrap: break-word;
+}
+
+%normal-wrap {
+	word-wrap: normal;
+}
+
+%inherit-wrap {
+	word-wrap: auto;
+}
+
+// Clearfix
+@mixin clearfix() {
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+// Hide for screen readability
+@mixin hide-me {
+	position: absolute; 
+	overflow: hidden; 
+	clip: rect(0 0 0 0); 
+	height: 1px; width: 1px; 
+	margin: -1px; padding: 0; border: 0;
+}
+
+// Hypenation
+@mixin css-hyphens($val) {
+	// Accepted values: [ none | manual | auto ]
+	-webkit-hyphens: $val; // Safari 5.1 thru 6, iOS 4.2 thru 6
+	-moz-hyphens: $val; // Firefox 16 thru 20
+	-ms-hyphens: $val; // IE10
+	-o-hyphens: $val; // PRESTO...haha LOL
+	hyphens: $val; // W3C standard
+}
+
+// Layout Mixins
+@mixin center-full {
+	@include clearfix();
+	width: 960px;
+	max-width: 100%;
+	margin: 0 auto;
+	@media only screen and (max-width: 61.5em) {
+		width: auto;
+		margin-left: 36px;
+		margin-right: 36px;
+	}
+	@media only screen and (max-width: 37.5em) {
+		margin-left: 18px;
+		margin-right: 18px;
+	}	
+}
+
+// Retina images
+@mixin retinize($file, $type, $width, $height) {
+	background-image: url('../i/' + $file + '.' + $type);
+	@media
+	only screen and (-webkit-min-device-pixel-ratio: 1.5),
+	only screen and (min--moz-device-pixel-ratio: 1.5),
+	only screen and (-o-min-device-pixel-ratio: 3/2),
+	only screen and (min-device-pixel-ratio: 1.5),
+	only screen and (min-resolution: 1.5dppx) {
+		& {
+			background-image: url('../images/' + $file + '-2x.' + $type);
+			-webkit-background-size: $width $height;
+			-moz-background-size: $width $height;
+			background-size: $width $height;
+		}
+	}
+}
+
+// Small caps
+@mixin small-caps {
+	font-size: 110%;
+	font-variant: small-caps;
+	font-weight: 600;
+	letter-spacing: 0.05em;
+	line-height: 1;	
+}
