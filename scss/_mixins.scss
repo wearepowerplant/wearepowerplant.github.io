@@ -14,6 +14,23 @@
 	word-wrap: auto;
 }
 
+// Border Radius
+@mixin border-radius($radius: 2px) {
+    -webkit-background-clip: padding-box;
+    -webkit-border-radius: $radius;
+    -moz-background-clip: padding-box;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;
+}
+
+// Box Shadow
+@mixin box-shadow($horizontal: 0px, $vertical: 1px, $blur: 2px, $color: #CCC) {
+	-webkit-box-shadow: $horizontal $vertical $blur $color;
+	-moz-box-shadow: $horizontal $vertical $blur $color;
+	box-shadow: $horizontal $vertical $blur $color;
+}
+
 // Clearfix
 @mixin clearfix() {
 	&:before,
@@ -24,6 +41,14 @@
 	&:after {
 		clear: both;
 	}
+}
+
+// Gradients
+@mixin vertical-gradient($start: #000, $stop: #FFF) {
+	background: ($start + $stop) / 2;
+	background: -webkit-gradient(linear, left top, left bottom, from($start), to($stop));
+	background: -moz-linear-gradient(center top, $start 0%, $stop 100%);
+    background: -moz-gradient(center top, $start 0%, $stop 100%);
 }
 
 // Hide for screen readability

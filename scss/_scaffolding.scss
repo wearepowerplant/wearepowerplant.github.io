@@ -8,10 +8,11 @@ html {
 }
 
 body {
-	color: $kore-gray;
-	font-family: "allumi-std", sans-serif;
-	font-style: normal;
-	font-weight: $font-weight-normal;
+	background-color: $body-bg;
+	color: $body-font-color;
+	font-family: $body-font-family;
+	font-style: $body-font-style;
+	font-weight: $body-font-weight;
 	line-height: 1.5;	
 }
 
@@ -33,9 +34,9 @@ a {
 	}
 }
 
-// Header 
+// Header
 .secondary-nav {
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 48px;
 	position: absolute;
 	right: 24px;
@@ -43,11 +44,15 @@ a {
 	z-index: 200;
 	li {
 		a {
-			color: white;
+			color: $kore-gray;
 			font-weight: 700;
 			letter-spacing: 0.02em;				
 			text-transform: uppercase;
 			white-space: nowrap;
+			&:after {
+				color: lighten($kore-gray, 30%);
+				content: "\25BC";
+			}
 		}
 	}
 	@media only screen and (max-width: 37.5em) {
@@ -93,13 +98,13 @@ a {
 }
 
 .global-nav {
-	border-bottom: 3px solid darken($dark-blue, 10%);
+	@include vertical-gradient($start: lighten($kore-gray, 60%), $stop: lighten($kore-gray, 57%));
+	border-bottom: 1px solid $border-color;
 	position: absolute;
 	z-index: 100;
 	top: 0;
 	width: 100%;
-	background: $dark-blue;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 18px;
 	padding: 0 24px;
 	ul {
@@ -114,7 +119,7 @@ a {
 				padding: 0;	
 			}
 			a {
-				color: white;
+				color: $kore-gray;
 				font-weight: 700;
 				letter-spacing: 0.02em;				
 				text-transform: uppercase;
